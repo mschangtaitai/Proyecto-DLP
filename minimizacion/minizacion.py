@@ -33,5 +33,5 @@ for i in partitions:
                 print(j,s,result)
                 if(len(result) > 0):
                     for part in partitions:
-                        if (result[0] in part):
+                        if (result[0] in part): 
                             print("Im on part: ", part)
