@@ -1,0 +1,21 @@
+digraph finite_state_machine {
+	rankdir=LR size=20
+	node [shape=doublecircle]
+	20
+	node [shape=square]
+	1
+	node [shape=circle]
+	1 -> 1 [label=" "]
+	1 -> 1 [label=p]
+	1 -> 1 [label=r]
+	1 -> 1 [label=i]
+	1 -> 1 [label=n]
+	1 -> 1 [label=t]
+	1 -> 20 [label=i]
+	20 -> 1 [label=" "]
+	20 -> 1 [label=p]
+	20 -> 1 [label=r]
+	20 -> 1 [label=i]
+	20 -> 1 [label=n]
+	20 -> 1 [label=t]
+}

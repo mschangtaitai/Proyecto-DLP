@@ -13,10 +13,8 @@ def graphAF(af, name):
     for i in af.start:
         f.node(i)
 
-
     f.attr('node', shape='circle')
     for i in af.trans:
         f.edge(i[0], i[2], label=i[1])
 
     f.view()
-    
