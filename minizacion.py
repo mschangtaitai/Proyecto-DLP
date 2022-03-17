@@ -1,5 +1,5 @@
 
-from resources import *
+from module import *
 
 testAFN = AF(["0","1","2","3","4","5","6"], ["a","b"],[
     ["0", "a", "0"],
@@ -35,3 +35,5 @@ for i in partitions:
                     for part in partitions:
                         if (result[0] in part): 
                             print("Im on part: ", part)
+
+

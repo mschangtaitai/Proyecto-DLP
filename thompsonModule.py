@@ -1,14 +1,37 @@
 
-from resources import *
+from module import *
+op = ["(", "*", "+", "|", ".", ")"]
+
+def getSigma(er, mainAFN):
+    for i in er:
+        if (op.__contains__(i) == False):
+            if(mainAFN.sigma.__contains__(i) == False):
+                mainAFN.sigma.append(i)
+    return mainAFN
+
+def createLeafs(er, afnList):
+    num = 0
+    for i in er:
+        if (op.__contains__(i) == False):
+            initialS = "i" + i + str(num)
+            finalS = "f" + i + str(num)
+            afnList.append(AF([initialS, finalS], [i], [[initialS,i,finalS]], [initialS], [finalS]))
+            num += 1
+
+def replaceConcat(er):
+    newEr = er
+    prev = ""
+    cont = 0
+    for i in er:
+        if ((i == ")") or (i == "|") or (prev == "|") or (prev == "(") or (prev == "") or (i =="*") or (i =="+")) == False:
+            newEr = newEr[:cont] + "." + newEr[cont:]
+            cont += 1
+        cont += 1
+        prev = i
+    
+    return newEr
 
 def inToPos(infix):
-    # Curly braces = dictionary
-    # *, +, and ? are repetition operators. They take precedence over concatenation and alternation operators
-    # * = Zero or more
-    # + = One or more
-    # ? = Zero or one
-    # . = Concatenation
-    # | =  Alternation
     specials = {'?': 70, '+': 60, '*': 50, '.': 40, '|': 30}
 
     pofix = ""
@@ -66,7 +89,6 @@ def kleene(afn):
     newFinal = "new" + afn.finals[0]
     states = afn.states + [newStart] + [newFinal]
     trans = afn.trans
-    
 
     trans.append([newStart,"E",afn.start[0]])
     trans.append([afn.finals[0],"E",newFinal])
@@ -77,5 +99,3 @@ def kleene(afn):
 
 def plus(afn):
     return concat(kleene(afn),afn)
-
-
