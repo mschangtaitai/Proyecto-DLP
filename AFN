@@ -1,26 +1,10 @@
 digraph finite_state_machine {
 	rankdir=LR size=20
 	node [shape=doublecircle]
-	fi17
+	fa1
 	node [shape=square]
-	"i 0"
+	ib0
 	node [shape=circle]
-	"i 0" -> "f 0i 1" [label=" "]
-	"f 0i 1" -> "f 1i 2" [label=" "]
-	"f 1i 2" -> "f 2i 3" [label=" "]
-	"f 2i 3" -> "f 3i 4" [label=" "]
-	"f 3i 4" -> "f 4i 5" [label=" "]
-	"f 4i 5" -> "f 5i 6" [label=" "]
-	"f 5i 6" -> "f 6i 7" [label=" "]
-	"f 6i 7" -> "f 7i 8" [label=" "]
-	"f 7i 8" -> "f 8i 9" [label=" "]
-	"f 8i 9" -> "f 9i 10" [label=" "]
-	"f 9i 10" -> "f 10i 11" [label=" "]
-	"f 10i 11" -> "f 11ip12" [label=" "]
-	"f 11ip12" -> fp12ir13 [label=p]
-	fp12ir13 -> fr13ii14 [label=r]
-	fr13ii14 -> fi14in15 [label=i]
-	fi14in15 -> fn15it16 [label=n]
-	fn15it16 -> ft16ii17 [label=t]
-	ft16ii17 -> fi17 [label=i]
+	ib0 -> fb0ia1 [label=b]
+	fb0ia1 -> fa1 [label=a]
 }

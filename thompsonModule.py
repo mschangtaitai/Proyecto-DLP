@@ -23,7 +23,7 @@ def replaceConcat(er):
     prev = ""
     cont = 0
     for i in er:
-        if ((i == ")") or (i == "|") or (prev == "|") or (prev == "(") or (prev == "") or (i =="*") or (i =="+")) == False:
+        if ((i == ")") or (i == "|") or (prev == "|") or (prev == "(") or (prev == "") or (i == "*") or (i == "+")) == False:
             newEr = newEr[:cont] + "." + newEr[cont:]
             cont += 1
         cont += 1
@@ -32,7 +32,7 @@ def replaceConcat(er):
     return newEr
 
 def inToPos(infix):
-    specials = {'?': 70, '+': 60, '*': 50, '.': 40, '|': 30}
+    specials = {'?': 7, '+': 6, '*': 5, '.': 4, '|': 3}
 
     pofix = ""
     stack = ""

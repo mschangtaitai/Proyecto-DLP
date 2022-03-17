@@ -9,7 +9,10 @@ def thompson(er):
 
     getSigma(er, mainAFN)
     createLeafs(er, afnList)
-    newEr = replaceConcat(er)
+    if ("." not in er):
+        newEr = replaceConcat(er)
+    else:
+        newEr = er
     newEr = inToPos(newEr)
     afnCont = 0
     afnStack = []
