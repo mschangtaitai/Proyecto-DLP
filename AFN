@@ -1,10 +1,18 @@
 digraph finite_state_machine {
 	rankdir=LR size=20
 	node [shape=doublecircle]
-	fa1
+	fa0
 	node [shape=square]
-	ib0
+	newia0
 	node [shape=circle]
-	ib0 -> fb0ia1 [label=b]
-	fb0ia1 -> fa1 [label=a]
+	newfa0ia0 -> fa0 [label=a]
+	newia0 -> newfa0ia0 [label=E]
+	fa0 -> newfa0ia0 [label=E]
+	fa0 -> newfa0ia0 [label=E]
+	newia0 -> newfa0ia0 [label=E]
+	newfa0ia0 -> fa0 [label=a]
+	newia0 -> newfa0ia0 [label=E]
+	fa0 -> newfa0ia0 [label=E]
+	fa0 -> newfa0ia0 [label=E]
+	newia0 -> newfa0ia0 [label=E]
 }
